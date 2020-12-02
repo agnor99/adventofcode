@@ -11,12 +11,17 @@ public class Solver2 extends AbstractSolver {
     public void solve() {
         List<Password> passwordList = getData("second", new PasswordParser());
         int countCorrect = 0;
+        int countCorrect2 = 0;
         for(Password p: passwordList) {
             if(p.isValid()) {
                 countCorrect++;
             }
+            if(p.isValid2()) {
+                countCorrect2++;
+            }
         }
         System.out.println(countCorrect);
+        System.out.println(countCorrect2);
     }
 
 
@@ -53,6 +58,18 @@ public class Solver2 extends AbstractSolver {
                 }
             }
             return amount >= minAmount;
+        }
+
+        boolean isValid2() {
+            boolean gotHit = false;
+
+            if(password.charAt(minAmount-1) == character) {
+                gotHit = true;
+            }
+            if(password.charAt(maxAmount-1) == character) {
+                return !gotHit;
+            }
+            return gotHit;
         }
     }
 }
