@@ -1,10 +1,10 @@
 package com.agnor99;
 
-import com.agnor99.solver.first.Solver;
+import com.agnor99.solver.second.Solver2;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Solver().solve();
+        new Solver2().solve();
     }
 }

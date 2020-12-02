@@ -9,7 +9,7 @@ public class Solver extends AbstractSolver {
     List<Integer> values = new ArrayList<>();
     @Override
     public void solve() {
-        values = getInteger("first");
+        values = getData("first", Integer::parseInt);
         System.out.println(getSolution());
         System.out.println(getSolutionForThree());
     }
