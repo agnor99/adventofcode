@@ -15,6 +15,20 @@ public abstract class AbstractSolver {
         }
         return data;
     }
+    protected final <T> List<T> getBatchData(String packageQualifier, ITypeBatchParser<T> parser) {
+        List<T> data = new ArrayList<>();
+        List<String> batch = new ArrayList<>();
+        for(String s: getStrings(packageQualifier)) {
+            if(s.equals("")) {
+                data.add(parser.parse(batch));
+                batch.clear();
+            }else{
+                batch.add(s);
+            }
+        }
+        data.add(parser.parse(batch));
+        return data;
+    }
     protected final List<String> getStrings(String packageQualifier) {
         List<String> strings = new ArrayList<>();
         try {
