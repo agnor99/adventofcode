@@ -1,7 +1,7 @@
 package com.agnor99;
 
 
-import com.agnor99.solver.day11.Solver;
+import com.agnor99.solver.day12.Solver;
 
 public class Main {
 
